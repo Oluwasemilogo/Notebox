@@ -11,7 +11,7 @@ const SideMenu = () => {
   } = useColorContext();
 
   return (
-    <div className="w-1/6 h-screen px-10 py-6 items-center shadow-md flex flex-col">
+    <div className="w-1/6 px-10 py-6 items-center shadow-md  overflow-y-auto">
       <div className="flex flex-col items-center">
         <h1 className="text-3xl font-medium leading-6 my-6">notebox</h1>
         <img
