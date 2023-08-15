@@ -11,14 +11,16 @@ const SideMenu = () => {
   } = useColorContext();
 
   return (
-    <div className="w-1/6 px-10 py-6 items-center shadow-md  overflow-y-auto">
+    <div
+      className="w-1/6 px-10 py-6 items-center shadow-md overflow-auto"
+    >
       <div className="flex flex-col items-center">
-        <h1 className="text-3xl font-medium leading-6 my-6">notebox</h1>
+        <h1 className="text-3xl font-medium leading-6 my-6">noteBox</h1>
         <img
           src={add}
           alt="add"
           className="w-16 h-16 mt-4 cursor-pointer"
-          onClick={(e) => handleAddClick(e)} 
+          onClick={(e) => handleAddClick(e)}
         />
         {showColorButtons && (
           <div className="mt-8 space-y-8 flex flex-col">
