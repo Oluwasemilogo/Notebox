@@ -5,7 +5,7 @@ import { useColorContext } from "../ColorContext";
 export const Searchbox = () => {
   const { setSearchQuery } = useColorContext(); 
   return (
-    <div className="flex items-center gap-2 p-3 rounded-md text-md text-gray bg-white">
+    <div className="flex items-center gap-2 p-3 rounded-md text-md shadow-md w-64 text-gray bg-white">
       <img src={search} alt="" />
       <input
         type="text"

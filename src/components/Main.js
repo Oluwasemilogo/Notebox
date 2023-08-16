@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Searchbox } from "./Searchbox";
+import { SortByTime } from "./sortByTime";
 import { useColorContext } from "../ColorContext";
 import editIcon from "../assets/edit.svg";
 import deleteIcon from "../assets/delete.svg";
-
 
 export const Main = () => {
   const {
@@ -21,14 +21,22 @@ export const Main = () => {
     setSearchQuery,
     filteredNotes,
     saveNoteWithTags,
+    handleSortChange,
   } = useColorContext();
 
   const tempColor = selectedColor;
-  
+
+  useEffect(() => {
+    console.log(notes);
+  }, [notes]);
 
   return (
-    <div className="flex flex-col  p-10 Main">
-      <Searchbox setSearchQuery={setSearchQuery} />
+    <div className="flex flex-col  p-10 w-full">
+      <div className="flex items-center justify-between ">
+        <Searchbox setSearchQuery={setSearchQuery} />
+        <SortByTime handleSortChange={handleSortChange} />
+      </div>
+
       <h1 className="text-3xl font-medium leading-6 my-12">Notes</h1>
       <div className="flex ">
         <div className={`flex-wrap flex gap-8`}>
