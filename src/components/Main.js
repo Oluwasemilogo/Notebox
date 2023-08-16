@@ -34,18 +34,23 @@ export const Main = () => {
   }, [notes]);
 
   return (
-    <div className="flex flex-col  p-10 w-full">
-      <div className="flex items-center justify-between ">
+    <div className="flex flex-col p-5 sm:p-10 w-full">
+      <h1 className="text-3xl text-center font-medium leading-6 my-6 md:hidden block">
+        noteBox
+      </h1>
+      <div className="flex flex-col sm:flex-row items-center justify-between mb-4 ">
         <Searchbox setSearchQuery={setSearchQuery} />
-        <SortByTime handleSortChange={handleSortChange} />
+        <div className="mt-6 sm:mt-0">
+          <SortByTime handleSortChange={handleSortChange} />
+        </div>
       </div>
-
-      <h1 className="text-3xl font-medium leading-6 my-12">Notes</h1>
-      <div className="flex ">
-        <div className={`flex-wrap flex gap-8`}>
+      
+      <div className="flex my-16">
+        <div className={` ml-8 md:ml-16 flex-wrap flex gap-10`}>
           {selectedColor && (
             <div
-              className={`w-72 h-72 mt-4 rounded-[20px] `}
+              onClick={(e) => e.stopPropagation()}
+              className={`w-60 sm:w-72 h-72 mt-4 rounded-[20px] `}
               style={{ backgroundColor: `#${tempColor}` }}
             >
               <input
@@ -88,7 +93,7 @@ export const Main = () => {
             ? filteredNotes.map((note, index) => (
                 <div
                   key={index}
-                  className={`w-72 h-72 mt-2 rounded-lg `}
+                  className={`w-60 sm:w-72 h-72 mt-2 rounded-lg `}
                   style={{ backgroundColor: `#${note.color}` }}
                 >
                   <div
@@ -107,7 +112,7 @@ export const Main = () => {
                       />
                     ) : (
                       <>
-                        <div className="font-bold text-2xl mb-2 text-zinc-100 ">
+                        <div className="font-bold text-3xl mb-2 text-zinc-100 ">
                           {note.text}
                         </div>
                         <div className="text-sm font-normal mb-1 text-zinc-100">
@@ -132,23 +137,23 @@ export const Main = () => {
                           onClick={() => setEditingNoteIndex(index)}
                         />
                         {showDeleteDialog && (
-                          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                          <div className="fixed inset-0 flex items-center justify-center bg-zinc-300 bg-opacity-50">
                             <div className="bg-white p-6 rounded-md shadow-md">
                               <p className="text-md font-normal">
                                 Are you sure you want to delete this note?
                               </p>
                               <div className="flex justify-end mt-4">
                                 <button
-                                  className="mr-2 px-4 py-2 bg-red-500 text-white text-sm font-light rounded-md"
-                                  onClick={deleteNoteConfirmed}
-                                >
-                                  Delete
-                                </button>
-                                <button
-                                  className="px-4 py-2 bg-zinc-100 text-zinc-500 rounded-md text-sm font-light"
+                                  className="px-4 mr-4 py-2 bg-zinc-100 text-zinc-500 rounded-md text-sm font-light"
                                   onClick={deleteNoteCancelled}
                                 >
                                   Cancel
+                                </button>
+                                <button
+                                  className=" px-4 py-2 bg-red-500 text-white text-sm font-light rounded-md"
+                                  onClick={deleteNoteConfirmed}
+                                >
+                                  Delete
                                 </button>
                               </div>
                             </div>
@@ -168,7 +173,7 @@ export const Main = () => {
             : notes?.map((note, index) => (
                 <div
                   key={index}
-                  className={`w-72 h-72 mt-2 rounded-lg `}
+                  className={`w-60 sm:w-72 h-72 mt-2 rounded-lg `}
                   style={{ backgroundColor: `#${note.color}` }}
                 >
                   <div
@@ -187,7 +192,7 @@ export const Main = () => {
                       />
                     ) : (
                       <>
-                        <div className="font-bold text-2xl mb-2 text-zinc-100 ">
+                        <div className="font-bold text-xl mb-2 text-zinc-100 ">
                           {note.text}
                         </div>
                         <div className="text-sm font-normal mb-1 text-zinc-100">
@@ -212,23 +217,23 @@ export const Main = () => {
                           onClick={() => setEditingNoteIndex(index)}
                         />
                         {showDeleteDialog && (
-                          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                          <div className="fixed inset-0 flex items-center justify-center bg-zinc-200 bg-opacity-50">
                             <div className="bg-white p-6 rounded-md shadow-md">
                               <p className="text-lg font-medium">
                                 Are you sure you want to delete this note?
                               </p>
                               <div className="flex justify-end mt-4">
                                 <button
-                                  className="mr-2 px-4 py-2 bg-red-500 text-white rounded-md"
-                                  onClick={deleteNoteConfirmed}
-                                >
-                                  Delete
-                                </button>
-                                <button
-                                  className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md"
+                                  className="px-4 py-2 mr-4 bg-gray-300 text-gray-700 rounded-md"
                                   onClick={deleteNoteCancelled}
                                 >
                                   Cancel
+                                </button>
+                                <button
+                                  className=" px-4 py-2 bg-red-500 text-white rounded-md"
+                                  onClick={deleteNoteConfirmed}
+                                >
+                                  Delete
                                 </button>
                               </div>
                             </div>

@@ -1,20 +1,21 @@
-import React from 'react';
+import React from "react";
 import { useColorContext } from "../ColorContext";
 
 export const SortByTime = () => {
-    const { handleSortChange } = useColorContext();
+  const { handleSortChange } = useColorContext();
   return (
     <div className="flex flex-col">
-      <label className="text-md font-600 text-center">
-        Sort by Time Created
-      </label>
       <select
-        className="p-3 rounded-md text-md shadow-md w-64  bg-white outline-none mt-4"
+        className="p-2 rounded-md text-md shadow-md w-60 sm:w-64  bg-white outline-none mt-4"
         onChange={(e) => handleSortChange(e)}
+        defaultValue={"Sort by time"}
       >
+        <option hidden value={"Sort by time"}>
+          Sort by time
+        </option>
         <option value="newest">Newest</option>
         <option value="oldest">Oldest</option>
       </select>
     </div>
   );
-}
+};

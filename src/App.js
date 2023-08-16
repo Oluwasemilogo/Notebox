@@ -4,10 +4,16 @@ import { Main } from "./components/Main";
 import { useColorContext } from "./ColorContext";
 
 function App() {
-  const { setShowColorButtons } = useColorContext();
+  const { setShowColorButtons, setSelectedColor } = useColorContext();
 
   return (
-    <div onClick={() => setShowColorButtons(false)} className="flex">
+    <div
+      onClick={() => {
+        setSelectedColor()
+        setShowColorButtons(false)
+      }}
+      className="flex "
+    >
       <SideMenu />
       <Main />
     </div>
