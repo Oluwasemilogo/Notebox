@@ -109,9 +109,35 @@ export const ColorProvider = ({ children }) => {
     }
     console.log("context", notes);
   };
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [noteToDeleteIndex, setNoteToDeleteIndex] = useState(null);
+
+  const showDeleteConfirmation = (index) => {
+    setNoteToDeleteIndex(index);
+    setShowDeleteDialog(true);
+  };
+
+  const deleteNoteConfirmed = () => {
+    handleDeleteNote(noteToDeleteIndex);
+    setShowDeleteDialog(false);
+    setNoteToDeleteIndex(null);
+  };
+
+  const deleteNoteCancelled = () => {
+    setShowDeleteDialog(false);
+    setNoteToDeleteIndex(null);
+  };
+
 
   const contextValues = {
     selectedColor,
+    showDeleteDialog,
+    setShowDeleteDialog,
+    noteToDeleteIndex,
+    setNoteToDeleteIndex,
+    deleteNoteConfirmed,
+    deleteNoteCancelled,
+    showDeleteConfirmation,
     setSelectedColor,
     showColorButtons,
     setShowColorButtons,

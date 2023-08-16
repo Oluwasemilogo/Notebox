@@ -12,7 +12,10 @@ export const Main = () => {
     setNote,
     handleNoteKeyPress,
     notes,
-    handleDeleteNote,
+    showDeleteDialog,
+    showDeleteConfirmation,
+    deleteNoteConfirmed,
+    deleteNoteCancelled,
     editingNoteIndex,
     setEditingNoteIndex,
     handleEditNoteChange,
@@ -128,11 +131,34 @@ export const Main = () => {
                           className="w-8 h-8 absolute top-[200px] right-[10px] cursor-pointer"
                           onClick={() => setEditingNoteIndex(index)}
                         />
+                        {showDeleteDialog && (
+                          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                            <div className="bg-white p-6 rounded-md shadow-md">
+                              <p className="text-md font-normal">
+                                Are you sure you want to delete this note?
+                              </p>
+                              <div className="flex justify-end mt-4">
+                                <button
+                                  className="mr-2 px-4 py-2 bg-red-500 text-white text-sm font-light rounded-md"
+                                  onClick={deleteNoteConfirmed}
+                                >
+                                  Delete
+                                </button>
+                                <button
+                                  className="px-4 py-2 bg-zinc-100 text-zinc-500 rounded-md text-sm font-light"
+                                  onClick={deleteNoteCancelled}
+                                >
+                                  Cancel
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                         <img
                           src={deleteIcon}
                           alt="delete"
                           className="w-8 h-8 absolute top-[20px] right-[10px] cursor-pointer"
-                          onClick={() => handleDeleteNote(index)}
+                          onClick={() => showDeleteConfirmation(index)}
                         />
                       </>
                     )}
@@ -185,11 +211,34 @@ export const Main = () => {
                           className="w-8 h-8 absolute top-[200px] right-[10px] cursor-pointer"
                           onClick={() => setEditingNoteIndex(index)}
                         />
+                        {showDeleteDialog && (
+                          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                            <div className="bg-white p-6 rounded-md shadow-md">
+                              <p className="text-lg font-medium">
+                                Are you sure you want to delete this note?
+                              </p>
+                              <div className="flex justify-end mt-4">
+                                <button
+                                  className="mr-2 px-4 py-2 bg-red-500 text-white rounded-md"
+                                  onClick={deleteNoteConfirmed}
+                                >
+                                  Delete
+                                </button>
+                                <button
+                                  className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md"
+                                  onClick={deleteNoteCancelled}
+                                >
+                                  Cancel
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                         <img
                           src={deleteIcon}
                           alt="delete"
                           className="w-8 h-8 absolute top-[20px] right-[10px] cursor-pointer"
-                          onClick={() => handleDeleteNote(index)}
+                          onClick={() => showDeleteConfirmation(index)}
                         />
                       </>
                     )}
