@@ -6,7 +6,7 @@ export const SortByTime = () => {
   return (
     <div className="flex flex-col">
       <select
-        className="p-2 rounded-md text-md shadow-md w-60 sm:w-64  bg-white outline-none mt-4"
+        className="p-3 rounded-md text-md shadow-lg w-60 sm:w-64  bg-white outline-none mt-4"
         onChange={(e) => handleSortChange(e)}
         defaultValue={"Sort by time"}
       >

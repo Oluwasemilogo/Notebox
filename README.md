@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Notebox App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Notebox is a sleek and user-friendly note-taking web application that allows users to easily create, edit, and manage their notes. The app offers a range of features designed to enhance organization, retrieval, and customization of notes.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Creating and Editing Notes
 
-### `npm start`
+Users can create new notes by providing a title and content. Additionally, the app enables users to edit existing notes content, allowing them to update the content as needed.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Deleting Notes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To maintain a clutter-free workspace, users have the option to delete notes they no longer require. A confirmation prompt will ensure accidental deletions are prevented.
 
-### `npm test`
+### Tagging Notes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Notebox supports the addition of tags to each note. Users can apply relevant keywords as tags to facilitate better organization and effortless retrieval of notes.
 
-### `npm run build`
+### Searching by Tags
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app implements a robust search functionality that enables users to filter their notes based on tags. This feature simplifies the process of locating specific notes amid a collection.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Sorting by Newly Created
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Notes are presented in a list format, with a user-friendly feature to sort them based on their creation time. By default, the app displays the most recently created notes at the top of the list.
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To use Notebox, follow these simple steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Create a Note:** Click on the "add " icon and select from the color palette,your desired color for your notebox and enter a title and content for your note.
+2. **Edit a Note:** Click on an existing note and make the desired changes to its content.
+3. **Delete a Note:** Select a note and choose the delete option. Confirm the deletion when prompted.
+4. **Tagging a Note:** While creating or editing a note, add relevant tags by entering keywords preceded by "#" (e.g., #work, #ideas).
+5. **Search Notes:** Use the search bar to enter tags and filter notes with matching keywords.
+6. **Sort Notes:** Toggle between sorting options to view notes based on their creation time.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Live or Hosted Url = " https://noteboxapp.netlify.app/ "
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub Repository Url = " https://github.com/Oluwasemilogo/notebox "

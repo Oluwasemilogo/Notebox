@@ -35,7 +35,7 @@ export const Main = () => {
 
   return (
     <div className="flex flex-col p-5 sm:p-10 w-full">
-      <h1 className="text-3xl text-center font-medium leading-6 my-6 md:hidden block">
+      <h1 className="text-3xl text-center font-medium leading-6 my-12 mb-12 md:hidden block">
         noteBox
       </h1>
       <div className="flex flex-col sm:flex-row items-center justify-between mb-4 ">
